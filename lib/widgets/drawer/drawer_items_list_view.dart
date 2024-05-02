@@ -1,6 +1,6 @@
 import 'package:admin_dashboard/models/drawer_item_model.dart';
 import 'package:admin_dashboard/utils/app_icons.dart';
-import 'package:admin_dashboard/widgets/drawer_item.dart';
+import 'package:admin_dashboard/widgets/drawer/drawer_item.dart';
 import 'package:flutter/material.dart';
 
 class DrawerItemsListView extends StatefulWidget {

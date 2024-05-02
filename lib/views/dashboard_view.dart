@@ -1,5 +1,5 @@
-import 'package:admin_dashboard/widgets/adaptive_layout.dart';
-import 'package:admin_dashboard/widgets/dashboard_desktop_layout.dart';
+import 'package:admin_dashboard/layouts/adaptive_layout.dart';
+import 'package:admin_dashboard/layouts/dashboard_desktop_layout.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatelessWidget {
@@ -8,6 +8,7 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF7F9FA),
       body: AdaptiveLayout(
         desktopLayout: (context) => const DashboardDesktopLayout(),
         mobileLayout: (context) => const SizedBox(),
