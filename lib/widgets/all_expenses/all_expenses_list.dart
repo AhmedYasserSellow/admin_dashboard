@@ -1,3 +1,4 @@
+import 'package:admin_dashboard/extensions/sepretator.dart';
 import 'package:admin_dashboard/models/all_expenses_item_model.dart';
 import 'package:admin_dashboard/utils/app_icons.dart';
 import 'package:admin_dashboard/widgets/all_expenses/all_expenses_item.dart';
@@ -11,6 +12,7 @@ class AllExpensesListView extends StatefulWidget {
 }
 
 class _AllExpensesListViewState extends State<AllExpensesListView> {
+  int selectedIndex = 0;
   final List<AllExpensesItemModel> allExpensesItemModel = const [
     AllExpensesItemModel(
       image: Assets.imagesBalance,
@@ -31,31 +33,36 @@ class _AllExpensesListViewState extends State<AllExpensesListView> {
       price: r'$20,150',
     ),
   ];
-  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: allExpensesItemModel.asMap().entries.map((e) {
-        int index = e.key;
-        AllExpensesItemModel itemModel = e.value;
-        return Expanded(
-          child: GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: Padding(
-              padding: index == 1
-                  ? const EdgeInsets.symmetric(horizontal: 12)
-                  : EdgeInsets.zero,
-              child: AllExpensesItem(
+      children: allExpensesItemModel
+          .asMap()
+          .entries
+          .map((e) {
+            int index = e.key;
+            AllExpensesItemModel itemModel = e.value;
+            return Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+                child: AllExpensesItem(
                   isSelected: selectedIndex == index,
-                  allExpensesItemModel: itemModel),
+                  allExpensesItemModel: itemModel,
+                ),
+              ),
+            );
+          })
+          .seperator(
+            const SizedBox(
+              width: 12,
             ),
-          ),
-        );
-      }).toList(),
+          )
+          .toList(),
     );
   }
 }
