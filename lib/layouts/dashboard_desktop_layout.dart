@@ -1,5 +1,6 @@
 import 'package:admin_dashboard/views/all_expenses_view.dart';
 import 'package:admin_dashboard/views/custom_drawer_view.dart';
+import 'package:admin_dashboard/views/quick_invoice_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,24 +12,28 @@ class DashboardDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(child: CustomDrawer()),
+        Expanded(child: CustomDrawer()), // Drawer
         SizedBox(
           width: 32,
         ),
         Expanded(
           flex: 2,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 40,
-              ),
-              Expanded(
-                child: AllExpenses(),
-              ),
-              SizedBox(
-                height: 24,
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                AllExpensesView(),
+                SizedBox(
+                  height: 24,
+                ),
+                QuickInvoiceView(),
+                SizedBox(
+                  height: 32,
+                ),
+              ],
+            ),
           ),
         ),
         SizedBox(

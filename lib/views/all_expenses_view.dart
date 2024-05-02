@@ -3,8 +3,8 @@ import 'package:admin_dashboard/widgets/all_expenses/all_expenses_list.dart';
 import 'package:admin_dashboard/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
 
-class AllExpenses extends StatelessWidget {
-  const AllExpenses({super.key});
+class AllExpensesView extends StatelessWidget {
+  const AllExpensesView({super.key});
 
   @override
   Widget build(BuildContext context) {
