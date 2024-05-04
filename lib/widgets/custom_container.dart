@@ -4,16 +4,16 @@ class CustomContainer extends StatelessWidget {
   const CustomContainer({
     super.key,
     required this.child,
-    this.padding = 20,
+    this.padding = const EdgeInsets.all(
+      20,
+    ),
   });
   final Widget child;
-  final double padding;
+  final EdgeInsetsGeometry padding;
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(
-          padding,
-        ),
+        padding: padding,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(

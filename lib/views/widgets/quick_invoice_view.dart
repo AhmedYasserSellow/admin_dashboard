@@ -1,6 +1,6 @@
 import 'package:admin_dashboard/widgets/custom_container.dart';
 import 'package:admin_dashboard/widgets/quick_invoice/custom_button.dart';
-import 'package:admin_dashboard/widgets/quick_invoice/latest_transctions_section.dart';
+import 'package:admin_dashboard/widgets/quick_invoice/latest_transactions_section.dart';
 import 'package:admin_dashboard/widgets/quick_invoice/quick_invoice._header.dart';
 import 'package:admin_dashboard/widgets/quick_invoice/quick_invoice_form.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class QuickInvoiceView extends StatelessWidget {
           SizedBox(
             height: 24,
           ),
-          LatestTransctionSection(),
+          LatestTransactionSection(),
           Divider(
             height: 48,
             color: Color(0xffF1F1F1),

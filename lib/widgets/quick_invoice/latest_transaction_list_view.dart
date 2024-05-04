@@ -3,8 +3,8 @@ import 'package:admin_dashboard/utils/app_icons.dart';
 import 'package:admin_dashboard/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
 
-class LatestTransctionListView extends StatelessWidget {
-  const LatestTransctionListView({super.key});
+class LatestTransactionListView extends StatelessWidget {
+  const LatestTransactionListView({super.key});
   static const List<UserInfoModel> userInfoModelList = [
     UserInfoModel(
       email: 'ahmedyasser@gmail.com',

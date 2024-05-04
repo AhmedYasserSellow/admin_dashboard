@@ -1,9 +1,9 @@
 import 'package:admin_dashboard/utils/app_styles.dart';
-import 'package:admin_dashboard/widgets/quick_invoice/latest_transction_list_view.dart';
+import 'package:admin_dashboard/widgets/quick_invoice/latest_transaction_list_view.dart';
 import 'package:flutter/material.dart';
 
-class LatestTransctionSection extends StatelessWidget {
-  const LatestTransctionSection({super.key});
+class LatestTransactionSection extends StatelessWidget {
+  const LatestTransactionSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class LatestTransctionSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Latest Transction',
+          'Latest Transaction',
           style: AppStyles.styleMedium16,
         ),
         SizedBox(
           height: 12,
         ),
-        LatestTransctionListView(),
+        LatestTransactionListView(),
       ],
     );
   }
