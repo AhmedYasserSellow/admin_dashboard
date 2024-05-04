@@ -1,8 +1,8 @@
-import 'package:admin_dashboard/views/widgets/all_expenses_view.dart';
-import 'package:admin_dashboard/views/widgets/custom_drawer_view.dart';
-import 'package:admin_dashboard/views/widgets/income_view.dart';
-import 'package:admin_dashboard/views/widgets/quick_invoice_view.dart';
-import 'package:admin_dashboard/views/widgets/card_usage_view.dart';
+import 'package:admin_dashboard/layouts/widgets/all_expenses_view.dart';
+import 'package:admin_dashboard/layouts/widgets/card_usage_view.dart';
+import 'package:admin_dashboard/layouts/widgets/custom_drawer_view.dart';
+import 'package:admin_dashboard/layouts/widgets/income_view.dart';
+import 'package:admin_dashboard/layouts/widgets/quick_invoice_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,7 +14,10 @@ class DashboardDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        Expanded(flex: 1, child: CustomDrawer()), // Drawer
+        Expanded(
+          flex: 1,
+          child: CustomDrawer(),
+        ),
         SizedBox(
           width: 32,
         ),
@@ -31,13 +34,14 @@ class DashboardDesktopLayout extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                      flex: 3,
-                      child: Column(
-                        children: [
-                          AllExpensesView(),
-                          QuickInvoiceView(),
-                        ],
-                      )), //Transction Section
+                    flex: 3,
+                    child: Column(
+                      children: [
+                        AllExpensesView(),
+                        QuickInvoiceView(),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     width: 24,
                   ),
@@ -46,6 +50,9 @@ class DashboardDesktopLayout extends StatelessWidget {
                     child: Column(
                       children: [
                         CardUageView(),
+                        SizedBox(
+                          height: 24,
+                        ),
                         IncomeView(),
                       ],
                     ),

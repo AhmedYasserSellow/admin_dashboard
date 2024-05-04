@@ -1,5 +1,7 @@
 import 'package:admin_dashboard/extensions/sepretator.dart';
 import 'package:admin_dashboard/models/income_model.dart';
+import 'package:admin_dashboard/utils/size_config.dart';
+import 'package:admin_dashboard/widgets/income/detailed_income_chart.dart';
 import 'package:admin_dashboard/widgets/income/income_chart.dart';
 import 'package:admin_dashboard/widgets/income/income_details.dart';
 import 'package:flutter/material.dart';
@@ -31,32 +33,38 @@ class IncomeContent extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Expanded(
-          flex: 2,
-          child: IncomeChart(),
-        ),
-        const SizedBox(
-          width: 40,
-        ),
-        Expanded(
-          flex: 3,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: incomeList
-                .map(
-                  (e) => IncomeDetails(incomeModel: e),
-                )
-                .seperator(
-                  const SizedBox(
-                    height: 12,
-                  ),
-                )
-                .toList(),
+    double width = MediaQuery.sizeOf(context).width;
+
+    if (width >= SizeConfig.desktop && width <= 1750) {
+      return const DetailedIncomeChart();
+    } else {
+      return Row(
+        children: [
+          const Expanded(
+            flex: 2,
+            child: IncomeChart(),
           ),
-        ),
-      ],
-    );
+          const SizedBox(
+            width: 40,
+          ),
+          Expanded(
+            flex: 3,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: incomeList
+                  .map(
+                    (e) => IncomeDetails(incomeModel: e),
+                  )
+                  .seperator(
+                    const SizedBox(
+                      height: 12,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
+        ],
+      );
+    }
   }
 }

@@ -11,27 +11,45 @@ class IncomeDetails extends StatelessWidget {
   final IncomeModel incomeModel;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CustomDot(
-          color: incomeModel.color,
-          height: 12,
+    return ListTile(
+      leading: CustomDot(
+        color: incomeModel.color,
+        height: 12,
+      ),
+      title: Text(
+        incomeModel.title,
+        style: AppStyles.styleRegular16,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 2,
+      ),
+      trailing: Text(
+        '${incomeModel.value}' '%',
+        style: AppStyles.styleMedium16.copyWith(
+          color: const Color(0xff208CC8),
         ),
-        const SizedBox(
-          width: 4,
-        ),
-        Text(
-          incomeModel.title,
-          style: AppStyles.styleRegular16,
-        ),
-        const Spacer(),
-        Text(
-          '${incomeModel.value}' '%',
-          style: AppStyles.styleMedium16.copyWith(
-            color: const Color(0xff208CC8),
-          ),
-        ),
-      ],
+      ),
     );
+    // return Row(
+    //   children: [
+    //     CustomDot(
+    //       color: incomeModel.color,
+    //       height: 12,
+    //     ),
+    //     const SizedBox(
+    //       width: 4,
+    //     ),
+    //     Text(
+    //       incomeModel.title,
+    //       style: AppStyles.styleRegular16,
+    //     ),
+    //     const Spacer(),
+    //     Text(
+    //       '${incomeModel.value}' '%',
+    //       style: AppStyles.styleMedium16.copyWith(
+    //         color: const Color(0xff208CC8),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }

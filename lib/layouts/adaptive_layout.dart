@@ -6,19 +6,19 @@ class AdaptiveLayout extends StatelessWidget {
     required this.desktopLayout,
     required this.mobileLayout,
     required this.tabletLayout,
-    this.mobileTabletBreakPoint = 600,
-    this.tabletDesktopBreakPoint = 900,
+    this.tablet = 600,
+    this.desktop = 900,
   });
 
   final WidgetBuilder mobileLayout, tabletLayout, desktopLayout;
-  final double mobileTabletBreakPoint, tabletDesktopBreakPoint;
+  final double tablet, desktop;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < mobileTabletBreakPoint) {
+        if (constraints.maxWidth < tablet) {
           return mobileLayout(context);
-        } else if (constraints.maxWidth < tabletDesktopBreakPoint) {
+        } else if (constraints.maxWidth < desktop) {
           return tabletLayout(context);
         } else {
           return desktopLayout(context);
