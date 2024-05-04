@@ -22,7 +22,7 @@ class IncomeView extends StatelessWidget {
           ),
           Text(
             'See Details',
-            style: AppStyles.styleSemiBold16.copyWith(
+            style: AppStyles.styleSemiBold16(context).copyWith(
               color: const Color(0xff4EB7F2),
             ),
           ),

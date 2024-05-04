@@ -45,11 +45,13 @@ class MyCard extends StatelessWidget {
               const Spacer(),
               Text(
                 cardModel.number,
-                style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+                style: AppStyles.styleSemiBold24(context)
+                    .copyWith(color: Colors.white),
               ),
               Text(
                 '${cardModel.month}/${cardModel.year} - ${cardModel.cvv}',
-                style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+                style: AppStyles.styleRegular16(context)
+                    .copyWith(color: Colors.white),
               )
             ],
           ),
@@ -74,11 +76,12 @@ class CardHeader extends StatelessWidget {
           children: [
             Text(
               'Card Name',
-              style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+              style: AppStyles.styleRegular16(context)
+                  .copyWith(color: Colors.white),
             ),
             Text(
               cardModel.name,
-              style: AppStyles.styleMedium20,
+              style: AppStyles.styleMedium20(context),
             ),
           ],
         ),

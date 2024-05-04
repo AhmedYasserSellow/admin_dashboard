@@ -11,7 +11,7 @@ class PriceDropDownMenu extends StatelessWidget {
         width: 10,
       ),
       initialSelection: 'USD',
-      textStyle: AppStyles.styleRegular16,
+      textStyle: AppStyles.styleRegular16(context),
       requestFocusOnTap: false,
       inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
