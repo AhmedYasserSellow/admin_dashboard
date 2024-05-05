@@ -24,7 +24,7 @@ class SettingsSection extends StatelessWidget {
         InActiveDrawerItem(
           drawerItemModel: DrawerItemModel(
             image: Assets.imagesLogout,
-            title: 'Logout account',
+            title: 'Logout',
           ),
         ),
         SizedBox(

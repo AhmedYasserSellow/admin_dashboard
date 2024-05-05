@@ -35,7 +35,7 @@ class IncomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
 
-    if (width >= SizeConfig.desktop && width <= 1750) {
+    if (width >= SizeConfig.desktop && width <= 1780) {
       return const DetailedIncomeChart();
     } else {
       return Row(

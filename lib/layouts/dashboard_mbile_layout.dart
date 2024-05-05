@@ -16,6 +16,7 @@ class _DashboardMobileLayoutState extends State<DashboardMobileLayout> {
     return Scaffold(
       key: key,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         elevation: 0,
         backgroundColor: const Color(0xfffafafa),
       ),

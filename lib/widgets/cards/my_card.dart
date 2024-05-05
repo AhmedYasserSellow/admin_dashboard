@@ -23,7 +23,7 @@ class MyCard extends StatelessWidget {
             left: 30,
             right: 45,
             top: 20,
-            bottom: 28,
+            // bottom: 28,
           ),
           decoration: ShapeDecoration(
             color: const Color(0xff4EB7F2),
@@ -52,7 +52,10 @@ class MyCard extends StatelessWidget {
                 '${cardModel.month}/${cardModel.year} - ${cardModel.cvv}',
                 style: AppStyles.styleRegular16(context)
                     .copyWith(color: Colors.white),
-              )
+              ),
+              const SizedBox(
+                height: 28,
+              ),
             ],
           ),
         ),
